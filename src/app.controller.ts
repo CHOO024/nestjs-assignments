@@ -30,4 +30,12 @@ export class AppController {
     }
   }
  }
+
+ @Get('factorial/:number')
+ factorialCalculator(@Param('number', ParseIntPipe)number: number){
+  let ans = 1;
+  for(let i = 1; i <= number; i++){
+    ans *= i ;
+  }return ans;
+ }
 }
